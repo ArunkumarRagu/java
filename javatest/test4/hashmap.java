@@ -1,0 +1,168 @@
+import java.util.*;
+import java.util.Scanner;
+class Problem1{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
+            char choice = sc.next().charAt(0);
+            // switch(choice){
+                if(choice=='a'){
+                    int x =sc.nextInt();
+                    int y =sc.nextInt();
+                    New.add_value(map,x,y);
+                }
+                if(choice=='b'){
+                    int y = sc.nextInt();
+					System.out.print(New.find_value(map,y)+" ");
+                }
+               if(choice=='c'){
+                    New.getSize(map);
+                }
+               if(choice=='d'){
+                    int x = sc.nextInt();
+                    New.remove_key(map,x);
+                }
+                if(choice=='e'){
+                    int x = sc.nextInt();
+                    New.remove_key(map,x);
+                }
+            }
+        }
+}
+
+
+class New{
+        static void add_value(TreeMap<Integer,Integer> map,int x,int y){
+            map.put(x,y);
+        }
+
+        static int find_value(TreeMap<Integer,Integer> map,int x){
+
+  		int k=-1;
+		if(map.containsKey(x))
+			k = map.get(x);
+		return k;
+        }
+        static void getSize(TreeMap<Integer,Integer> map){
+             System.out.println(map.size()); 
+        }
+        static void remove_key(TreeMap<Integer,Integer> map,int x){
+            map.remove(x);
+        }
+
+        // void sort_By_Key(TreeMap<Integer,Integer> map){
+
+        // }
+}
+
+
+
+//{ Driver Code Starts
+// import java.util.Scanner;
+// import java.util.*;
+// class problem1
+// {
+// 	public static void main(String args[])
+// 	{
+// 	    //Creating Scanner class to take input
+// 		Scanner sc = new Scanner(System.in);
+		
+// 		//taking total count of testcases
+// 		int t = sc.nextInt();
+		
+// 		while(t>0)
+// 		{
+// 		        //Declaring and Initializing a new HashMap of Integer,Integer pair
+// 				TreeMap<Integer, Integer> hm = new TreeMap<Integer, Integer>();
+				
+// 				//taking total count of queries
+// 				int q = sc.nextInt();
+				
+// 				while(q>0)
+// 				{
+// 				    //creating an object of class GfG
+// 					GfG g = new GfG();
+					
+// 					//reading the type of query
+// 					char c = sc.next().charAt(0);
+					
+// 					//if type is 'a' we add key, value pair in TreeSet
+// 					if(c=='a')
+// 					{
+// 						int x = sc.nextInt();
+// 						int y = sc.nextInt();
+// 						g.add_Value(hm,x,y);
+// 					}
+// 					if(c=='b')//if type is 'b' we find the value of key y
+// 					{
+// 						int y = sc.nextInt();
+// 						System.out.print(g.find_value(hm,y)+" ");
+// 					}
+// 					if(c=='c')//if type is 'c' we find the size of TreeSet
+// 						System.out.print(g.getSize(hm)+" ");
+// 					if(c=='d')//if type is 'd' we remove the key from TreeSet
+// 					{
+// 						int x = sc.nextInt();
+// 						g.removeKey(hm,x);
+// 					}
+// 					if(c=='e')//if type is 'e' we print the elements of TreeSet in sorted order
+// 						g.sorted_By_Key(hm);
+// 					q--;
+// 				}
+// 				System.out.println();
+// 		t--;
+// 		}
+// 	}
+	
+// }
+// // } Driver Code Ends
+
+
+// class GfG
+// {
+// 	  /*Inserts an entry with key x and value y in map */
+// 	void add_Value(TreeMap<Integer,Integer> hm, int x, int y)
+// 	{
+// 		hm.put(x,y);
+// 	}
+	
+// 	/*Returns the value with key x from the map 
+// 	  if the map contains key x, else return -1
+// 	*/
+// 	int find_value(TreeMap<Integer, Integer> hm, int x)
+// 	{
+// 		int s=-1;
+// 		if(hm.containsKey(x))
+// 			s = hm.get(x);
+		
+// 		return s;
+// 	}
+	
+// 	/*Returns the size of the map */
+// 	int getSize(TreeMap<Integer, Integer> hm)
+// 	{
+// 		return hm.size();
+// 	}
+		
+// 	/*Removes the entry with key x from the map */		
+// 	void removeKey(TreeMap<Integer, Integer> hm, int x)
+// 	{
+// 		hm.remove(x);
+// 	}
+	
+// 	 /*print map sorted by key using Iterator for traversing*/
+// 	void sorted_By_Key(TreeMap<Integer, Integer> hm)
+// 	{
+// 		Map<Integer, Integer> map = new TreeMap<Integer, Integer>(hm);
+// 		Set set1 = map.entrySet();
+// 		Iterator itr = set1.iterator();
+// 		while(itr.hasNext())
+// 		{
+// 			Map.Entry me = (Map.Entry)itr.next();
+// 			System.out.print(me.getKey()+ " ");
+// 		}
+//         SortedSet<String> keySet = new TreeSet<>(map.keySet());
+// 	}
+// }
